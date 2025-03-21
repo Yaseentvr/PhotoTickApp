@@ -67,10 +67,10 @@ class _LoginscreenState extends State<Loginscreen> {
                 ),
               ),
               const Spacer(),
-              loginRegisterNameAndPhone(
+              LoginRegisterNameAndPhone(
                   loginNameController: _loginNameController,
                   loginPhoneController: _loginPhoneController,
-                  clientCheck: ClientModel(id: '', date: '', time: '', name: '', location: '', event: '', phone: '', budget: '',),
+                  clientCheck: ClientModel(id: '', date: '', time: '', name: '', location: '', event: '', phone: '', budget: '',driveLink1: ''),
                   ),
             ],
           ),

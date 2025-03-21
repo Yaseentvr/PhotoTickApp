@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:phototickapp/Screens/client/clientListScreen.dart';
-import 'package:phototickapp/Screens/homescreen all items/appbar/itemsButtons/company_expenses_button.dart';
-import 'package:phototickapp/Screens/homescreen all items/appbar/itemsButtons/notification__page_button.dart';
-import 'package:phototickapp/Screens/homescreen all items/appbar/itemsButtons/profile_menu_button.dart';
-import 'package:phototickapp/Screens/homescreen all items/bottomNavigation/assistents/assistantAddScreen.dart';
-import 'package:phototickapp/Screens/homescreen all items/bottomNavigation/events/eventScreen.dart';
-import 'package:phototickapp/Screens/homescreen all items/bottomNavigation/images screen/imagesScreen.dart';
+import 'package:phototickapp/Screens/client/client_list_screen.dart';
+import 'package:phototickapp/Screens/homescreen%20all%20items/appbar/items_buttons/company_expenses_button.dart';
+import 'package:phototickapp/Screens/homescreen%20all%20items/appbar/items_buttons/profile_menu_button.dart';
+import 'package:phototickapp/Screens/homescreen%20all%20items/bottom_navigation/assistents/assistant_add_screen.dart';
+import 'package:phototickapp/Screens/homescreen%20all%20items/bottom_navigation/events/event_screen.dart';
+import 'package:phototickapp/Screens/homescreen%20all%20items/bottom_navigation/images%20screen/images_screen.dart';
+import 'package:phototickapp/colors/colors.dart';
 import 'package:phototickapp/db/client_model/client_model.dart';
-import 'package:phototickapp/db/image_Screen_model/imageScreen%20_model.dart';
+import 'package:phototickapp/db/image_screen_model/image_screen%20_model.dart';
 import 'package:phototickapp/screen_Sizes/screenSize.dart';
 
 class Homescreen extends StatefulWidget {
@@ -45,6 +45,7 @@ class _HomescreenState extends State<Homescreen> {
         event: '',
         phone: '',
         budget: '',
+        driveLink1: ''
       ),
     ),
     Eventscreen(),
@@ -74,27 +75,27 @@ class _HomescreenState extends State<Homescreen> {
     PreferredSizeWidget? appBar;
     if (_selectedIndex == 0) {
       appBar = AppBar(
-        backgroundColor: Color(0xFF57CFCE), // Change app bar color
+        backgroundColor:appBarColor, // Change app bar color
         elevation: 4,
         leading: company_expenses_button(),
         centerTitle: true,
-        title: const Text(
+        title:  Text(
           'Photo Tick',
           style: TextStyle(
-            fontSize: 24, // Slightly increase font size
+            fontSize: 24,
             fontWeight: FontWeight.bold,
-            color: Colors.white,
+            color: white,
           ),
         ),
         actions: [
-          notification_Page_button(),
+          // notification_Page_button(),
           profileMenu_button(widget: widget),
         ],
       );
     }
 
     return Scaffold(
-      backgroundColor: const Color(0xFFEFFBFB),
+     
       appBar: appBar,
       body: SafeArea(
         child: _screens[_selectedIndex], // Use the appropriate screen based on selected index
@@ -103,7 +104,7 @@ class _HomescreenState extends State<Homescreen> {
         decoration: BoxDecoration(
           boxShadow: [
             BoxShadow(
-              color: Colors.black.withOpacity(0.2),
+              color:boxShadow,
               blurRadius: 15,
               offset: Offset(0, -5),
             ),
@@ -135,12 +136,12 @@ class _HomescreenState extends State<Homescreen> {
               ),
             ],
             currentIndex: _selectedIndex,
-            selectedItemColor: Color(0xFF57CFCE),
-            unselectedItemColor: Colors.grey,
+            selectedItemColor: appBarColor,
+            unselectedItemColor: grey,
             onTap: _onItemTapped,
             showUnselectedLabels: true,
             type: BottomNavigationBarType.fixed,
-            backgroundColor: Colors.white,
+            backgroundColor: white,
           ),
         ),
       ),

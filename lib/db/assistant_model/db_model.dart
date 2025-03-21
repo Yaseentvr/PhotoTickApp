@@ -15,6 +15,8 @@ class AssistantModel {
   final String Place;
   @HiveField(4)
  final List<RoleModel> selectedroles;
+ @HiveField(5)
+ final String equipment;
  
 
   AssistantModel( 
@@ -24,6 +26,7 @@ class AssistantModel {
     required this.Place,
     required this.id,
     required this.selectedroles,
+    required this.equipment,
   
 
   });

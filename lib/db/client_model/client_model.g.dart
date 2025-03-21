@@ -27,13 +27,14 @@ class ClientModelAdapter extends TypeAdapter<ClientModel> {
       budget: fields[7] as String,
       personalAssistants: (fields[8] as List?)?.cast<dynamic>(),
       personalEquipments: (fields[9] as List?)?.cast<String>(),
+      driveLink1: fields[11] as String,
     )..personalExpenses = (fields[10] as List?)?.cast<double>();
   }
 
   @override
   void write(BinaryWriter writer, ClientModel obj) {
     writer
-      ..writeByte(11)
+      ..writeByte(12)
       ..writeByte(0)
       ..write(obj.id)
       ..writeByte(1)
@@ -55,7 +56,9 @@ class ClientModelAdapter extends TypeAdapter<ClientModel> {
       ..writeByte(9)
       ..write(obj.personalEquipments)
       ..writeByte(10)
-      ..write(obj.personalExpenses);
+      ..write(obj.personalExpenses)
+      ..writeByte(11)
+      ..write(obj.driveLink1);
   }
 
   @override

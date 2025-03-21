@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:phototickapp/Screens/client/clientListScreen.dart';
-import 'package:phototickapp/Screens/homescreen%20all%20items/bottomNavigation/images%20screen/imagesScreen.dart';
+import 'package:phototickapp/Screens/client/client_list_screen.dart';
+import 'package:phototickapp/Screens/homescreen%20all%20items/bottom_navigation/images%20screen/images_screen.dart';
 import 'package:phototickapp/db/client_model/client_model.dart';
-import 'package:phototickapp/db/image_Screen_model/imageScreen%20_model.dart';
+import 'package:phototickapp/db/image_screen_model/image_screen%20_model.dart';
 
 class CombinedScreen extends StatefulWidget {
   @override
@@ -23,6 +23,7 @@ class _CombinedScreenState extends State<CombinedScreen> {
         event: '',
         phone: '',
         budget: '',
+        driveLink1: ''
       ),
     ),
     Imagesscreen(

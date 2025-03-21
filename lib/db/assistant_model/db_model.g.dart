@@ -22,13 +22,14 @@ class AssistantModelAdapter extends TypeAdapter<AssistantModel> {
       Place: fields[3] as String,
       id: fields[0] as String,
       selectedroles: (fields[4] as List).cast<RoleModel>(),
+      equipment: fields[5] as String,
     );
   }
 
   @override
   void write(BinaryWriter writer, AssistantModel obj) {
     writer
-      ..writeByte(5)
+      ..writeByte(6)
       ..writeByte(0)
       ..write(obj.id)
       ..writeByte(1)
@@ -38,7 +39,9 @@ class AssistantModelAdapter extends TypeAdapter<AssistantModel> {
       ..writeByte(3)
       ..write(obj.Place)
       ..writeByte(4)
-      ..write(obj.selectedroles);
+      ..write(obj.selectedroles)
+      ..writeByte(5)
+      ..write(obj.equipment);
   }
 
   @override

@@ -20,7 +20,7 @@ class Custombutton extends StatelessWidget {
         width: 150,
         height: 40,
         child: Center(
-          child: Text(text),
+          child: Text(text,style: TextStyle( color: textColor,fontSize: 18),),
         ),
         decoration: BoxDecoration(
           color: backgroundColor,

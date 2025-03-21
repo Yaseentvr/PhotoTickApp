@@ -29,6 +29,9 @@ class ClientModel {
 
   @HiveField(10)
   List<double>? personalExpenses = [];
+  @HiveField(11)
+  String driveLink1;
+
 
   ClientModel(
       {required this.id,
@@ -40,5 +43,7 @@ class ClientModel {
       required this.phone,
       required this.budget,
       this.personalAssistants,
-      this.personalEquipments});
+      this.personalEquipments,
+      required this.driveLink1,
+      });
 }
