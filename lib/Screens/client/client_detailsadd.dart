@@ -1,9 +1,5 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/adapters.dart';
-import 'package:intl/intl.dart';
-import 'package:permission_handler/permission_handler.dart';
 import 'package:phototickapp/Screens/client/clientpersonal_worksdetails/client_customs/date_text_field.dart';
 import 'package:phototickapp/Screens/client/clientpersonal_worksdetails/client_customs/event_textfield.dart';
 import 'package:phototickapp/Screens/client/clientpersonal_worksdetails/client_customs/location_textfield.dart';
@@ -16,7 +12,6 @@ import 'package:phototickapp/Screens/client/customfields/budget_textfield_home.d
 import 'package:phototickapp/colors/colors.dart';
 import 'package:phototickapp/db/client_function/db_ClientFunction.dart';
 import 'package:phototickapp/db/client_model/client_model.dart';
-import 'package:phototickapp/notifications/notification_service.dart';
 import 'package:phototickapp/screen_Sizes/screenSize.dart';
 
 class ClientDetailsAdd extends StatefulWidget {
@@ -48,8 +43,6 @@ class _ClientdetailsaddState extends State<ClientDetailsAdd> {
   @override
   void initState() {
     super.initState();
-    NotificationService.initialize();
-    requestExactAlarmPermission();
     clientBox = Hive.box<ClientModel>('client_box');
     if (widget.clientToUpdate != null) {
       _nameHomeController.text = widget.clientToUpdate!.name;
@@ -67,63 +60,9 @@ class _ClientdetailsaddState extends State<ClientDetailsAdd> {
     }
   }
 
-  Future<void> requestExactAlarmPermission() async {
-    final status = await Permission.scheduleExactAlarm.request();
-    log('Exact alarm permission request status from add client: $status');
-    if (status.isDenied) {
-      log('Exact alarm permission denied by user from add client.');
-    } else if (status.isPermanentlyDenied) {
-      log('Exact alarm permission permanently denied by user from add client.');
-      openAppSettings();
-    } else if (status.isGranted) {
-      log('Exact alarm permission granted from add client.');
-    }
-  }
 
-  Future<void> scheduleEventNotifications(DateTime eventDateTime) async {
-    final hasPermission = await Permission.scheduleExactAlarm.isGranted;
-    log("Exact Alarm Permission Status: $hasPermission");
 
-    if (!hasPermission) {
-      log('Exact alarm permission denied.');
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(
-            content: Text('Please enable exact alarms in settings.')),
-      );
-      return;
-    }
-
-    try {
-      await NotificationService.scheduleEventNotifications(eventDateTime);
-    } catch (e) {
-      log("Error scheduling notification: $e");
-    }
-  }
-
-  void _onSave() {
-    try {
-      final dateFormat = DateFormat('yyyy-MM-dd');
-      final timeFormat = DateFormat('HH:mm');
-      final date = dateFormat.parse(_dateHomeController.text);
-      final time = timeFormat.parse(_timeHomeController.text);
-
-      final eventDateTime = DateTime(
-        date.year,
-        date.month,
-        date.day,
-        time.hour,
-        time.minute,
-      );
-
-      log('Parsed Event DateTime: $eventDateTime');
-      scheduleEventNotifications(eventDateTime);
-    } catch (e) {
-      log('Error parsing date/time: $e');
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('Invalid date or time format')),
-      );
-    }
-  }
+ 
 
   @override
   Widget build(BuildContext context) {
@@ -229,7 +168,7 @@ class _ClientdetailsaddState extends State<ClientDetailsAdd> {
                                 final DateTime eventDateTime = DateTime.parse(
                                   "${_dateHomeController.text} ${_timeHomeController.text}",
                                 );
-                                _onSave();
+                            
                                 addClientSaveButtonClicked();
                                 Navigator.pop(context);
                                 getAllClients();
