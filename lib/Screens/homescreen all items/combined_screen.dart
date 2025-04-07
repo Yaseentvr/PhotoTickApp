@@ -15,16 +15,15 @@ class _CombinedScreenState extends State<CombinedScreen> {
   final List<Widget> _screens = [
     Clientlistscreen(
       clientDetailsClick: ClientModel(
-        id: '',
-        date: '',
-        time: '',
-        name: '',
-        location: '',
-        event: '',
-        phone: '',
-        budget: '',
-        driveLink1: ''
-      ),
+          id: '',
+          date: '',
+          time: '',
+          name: '',
+          location: '',
+          event: '',
+          phone: '',
+          budget: '',
+          driveLink1: ''),
     ),
     Imagesscreen(
       images: imagescreen_Model(
@@ -58,7 +57,6 @@ class _CombinedScreenState extends State<CombinedScreen> {
             activeIcon: Icon(Icons.home),
             label: 'Clients',
           ),
-        
         ],
         currentIndex: _selectedIndex,
         selectedItemColor: const Color(0xFF57CFCE),
@@ -66,7 +64,7 @@ class _CombinedScreenState extends State<CombinedScreen> {
         onTap: _onItemTapped,
         showUnselectedLabels: true,
         type: BottomNavigationBarType.fixed,
-      // ),
+        // ),
       ),
     );
   }

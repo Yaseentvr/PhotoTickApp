@@ -132,14 +132,12 @@ class _ClientdetailsaddState extends State<ClientDetailsAdd> {
       backgroundColor: backgroundColor,
       appBar: AppBar(
         toolbarHeight: 100,
-        backgroundColor:backgroundColor,
+        backgroundColor: backgroundColor,
         centerTitle: true,
         title: Text(
           isUpadating ? 'Update Client Details' : 'Add Client Details',
           style: TextStyle(
-              fontSize: 19,
-              fontWeight: FontWeight.bold,
-              color:appBarColor),
+              fontSize: 19, fontWeight: FontWeight.bold, color: appBarColor),
         ),
       ),
       body: SafeArea(

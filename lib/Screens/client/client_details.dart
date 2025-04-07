@@ -31,7 +31,7 @@ class _DetailsState extends State<Details> {
   @override
   void initState() {
     super.initState();
-    
+
     _savedDriveLink = widget.clientDetailsClick.driveLink1;
     _driveLinkController = TextEditingController(text: _savedDriveLink);
   }
@@ -41,7 +41,6 @@ class _DetailsState extends State<Details> {
     _driveLinkController.dispose();
     super.dispose();
   }
-  
 
   @override
   Widget build(BuildContext context) {
@@ -49,7 +48,7 @@ class _DetailsState extends State<Details> {
       backgroundColor: backgroundColor,
       appBar: AppBar(
         centerTitle: true,
-        backgroundColor:appBarColor,
+        backgroundColor: appBarColor,
         title: Text(
           'CLIENT DETAILS',
           style: TextStyle(
@@ -73,14 +72,20 @@ class _DetailsState extends State<Details> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      clientDateText(clientDetailsClick: widget.clientDetailsClick),
-                      clientTimeText(clientDetailsClick: widget.clientDetailsClick),
-                      clientNameText(clientDetailsClick: widget.clientDetailsClick),
+                      clientDateText(
+                          clientDetailsClick: widget.clientDetailsClick),
+                      clientTimeText(
+                          clientDetailsClick: widget.clientDetailsClick),
+                      clientNameText(
+                          clientDetailsClick: widget.clientDetailsClick),
                       clientLocationText(
                           clientDetailsClick: widget.clientDetailsClick),
-                      clientEventText(clientDetailsClick: widget.clientDetailsClick),
-                      clientPhoneText(clientDetailsClick: widget.clientDetailsClick),
-                      clientBudgetText(clientDetailsClick: widget.clientDetailsClick),
+                      clientEventText(
+                          clientDetailsClick: widget.clientDetailsClick),
+                      clientPhoneText(
+                          clientDetailsClick: widget.clientDetailsClick),
+                      clientBudgetText(
+                          clientDetailsClick: widget.clientDetailsClick),
                       _buildDriveLinkInput(context),
                       _buildDriveLinkDisplay(context),
                     ],
@@ -140,7 +145,7 @@ class _DetailsState extends State<Details> {
     );
   }
 
-   Widget _buildDriveLinkInput(context) {
+  Widget _buildDriveLinkInput(context) {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 8.0),
       child: Row(
@@ -156,16 +161,18 @@ class _DetailsState extends State<Details> {
           ),
           IconButton(
             onPressed: () async {
-              ClipboardData? clipboardData = await Clipboard.getData('text/plain');
+              ClipboardData? clipboardData =
+                  await Clipboard.getData('text/plain');
               if (clipboardData != null && clipboardData.text != null) {
                 setState(() {
                   _driveLinkController.text = clipboardData.text!;
                   _savedDriveLink = _driveLinkController.text;
-                  widget.clientDetailsClick.driveLink1 = _savedDriveLink; // Update saved link
+                  widget.clientDetailsClick.driveLink1 =
+                      _savedDriveLink; // Update saved link
                 });
                 var clientBox = Hive.box<ClientModel>('clientBox');
-                 clientBox.put(widget.clientDetailsClick.id, widget.clientDetailsClick);
-
+                clientBox.put(
+                    widget.clientDetailsClick.id, widget.clientDetailsClick);
               }
             },
             icon: const Icon(Icons.paste),
@@ -183,7 +190,8 @@ class _DetailsState extends State<Details> {
         onTap: () async {
           // Ensure the link is well-formed
           String linkToLaunch = _driveLinkController.text.trim();
-          if (!linkToLaunch.startsWith('http://') && !linkToLaunch.startsWith('https://')) {
+          if (!linkToLaunch.startsWith('http://') &&
+              !linkToLaunch.startsWith('https://')) {
             linkToLaunch = 'https://$linkToLaunch'; // Add HTTPS if missing
           }
 
@@ -217,12 +225,12 @@ class _DetailsState extends State<Details> {
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-           Text(
+            Text(
               'Drive Link: ',
               style: TextStyle(
                 fontSize: 20,
                 fontWeight: FontWeight.w500,
-                color:grey,
+                color: grey,
               ),
             ),
             const SizedBox(width: 10),

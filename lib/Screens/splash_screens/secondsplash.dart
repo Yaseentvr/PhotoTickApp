@@ -6,7 +6,7 @@ import 'package:phototickapp/screen_Sizes/screenSize.dart';
 class Secondsplash extends StatefulWidget {
   final String name;
   final String phone;
- final ClientModel clientCheck;
+  final ClientModel clientCheck;
 
   const Secondsplash({
     super.key,
@@ -32,10 +32,8 @@ class _SecondsplashState extends State<Secondsplash> {
           name: widget.name,
           phone: widget.phone,
           place: '',
-          clientCheck:widget.clientCheck,
-  // roles: '',
-  //         addRole1: '',
-  selectedRoles: '',
+          clientCheck: widget.clientCheck,
+          selectedRoles: '',
         );
       }));
     });
@@ -62,18 +60,18 @@ class _SecondsplashState extends State<Secondsplash> {
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text(
-                  'Welcome  ${widget.name}!',
-                  style: TextStyle(
-                      color: const Color.fromARGB(255, 28, 28, 28),
-                      fontSize: 30,
-                      fontWeight: FontWeight.bold),
-                ),
-                Center(
-                    child: Padding(
-                  padding: const EdgeInsets.only(top: 50),
-                  child: Text('Loading...'),
-                ))
+                // Text(
+                //   'Welcome  ${widget.name}!',
+                //   style: TextStyle(
+                //       color: const Color.fromARGB(255, 28, 28, 28),
+                //       fontSize: 30,
+                //       fontWeight: FontWeight.bold),
+                // ),
+                // Center(
+                //     child: Padding(
+                //   padding: const EdgeInsets.only(top: 50),
+                //   child: Text('Loading...'),
+                // ))
               ],
             ),
           ),

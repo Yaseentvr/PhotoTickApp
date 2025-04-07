@@ -14,7 +14,8 @@ class EquipmentRepository {
     ClientModel? client = await getClient(clientId);
 
     if (client != null) {
-      client.personalEquipments = List.from(equipments); // Update personalEquipments
+      client.personalEquipments =
+          List.from(equipments); // Update personalEquipments
       await box.put(clientId, client);
       print('Equipments saved: ${client.personalEquipments}');
     } else {

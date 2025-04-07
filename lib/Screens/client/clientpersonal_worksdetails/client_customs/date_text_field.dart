@@ -15,14 +15,12 @@ class date_textField extends StatelessWidget {
       keyboardType: TextInputType.datetime,
       controller: _dateHomeController,
       decoration: InputDecoration(
-          fillColor:
-            white,
+          fillColor: white,
           filled: true,
           hintText: 'Date',
           suffixIcon: Icon(Icons.date_range_outlined),
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(9),
-           
           )),
     );
   }

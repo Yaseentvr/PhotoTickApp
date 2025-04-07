@@ -10,9 +10,9 @@ class updateCustomBottom extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Custombutton(
-        textColor: Colors.white,
-        backgroundColor: appBarColor,
-        text: 'Update',
-      );
+      textColor: Colors.white,
+      backgroundColor: appBarColor,
+      text: 'Update',
+    );
   }
 }

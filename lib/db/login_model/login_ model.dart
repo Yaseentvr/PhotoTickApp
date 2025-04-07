@@ -11,6 +11,5 @@ class Loginmodel {
   final String loginPhone;
 
   Loginmodel(
-      {
-        required this.loginName, required this.loginPhone, required this.id});
+      {required this.loginName, required this.loginPhone, required this.id});
 }

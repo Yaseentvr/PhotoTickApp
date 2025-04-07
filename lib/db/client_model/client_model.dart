@@ -32,18 +32,17 @@ class ClientModel {
   @HiveField(11)
   String driveLink1;
 
-
-  ClientModel(
-      {required this.id,
-      required this.date,
-      required this.time,
-      required this.name,
-      required this.location,
-      required this.event,
-      required this.phone,
-      required this.budget,
-      this.personalAssistants,
-      this.personalEquipments,
-      required this.driveLink1,
-      });
+  ClientModel({
+    required this.id,
+    required this.date,
+    required this.time,
+    required this.name,
+    required this.location,
+    required this.event,
+    required this.phone,
+    required this.budget,
+    this.personalAssistants,
+    this.personalEquipments,
+    required this.driveLink1,
+  });
 }

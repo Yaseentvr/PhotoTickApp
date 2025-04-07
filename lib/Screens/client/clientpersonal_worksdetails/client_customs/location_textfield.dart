@@ -17,7 +17,7 @@ class location_textfield extends StatelessWidget {
       controller: _locationHomeController,
       keybordTpe: TextInputType.streetAddress,
       color1: white,
-       keyboardType: TextInputType.text,
+      keyboardType: TextInputType.text,
     );
   }
 }

@@ -13,7 +13,7 @@ class PersonalBudgetModel {
   @HiveField(3)
   String remainingBudget;
   @HiveField(4)
-  final DateTime expenseDate ;
+  final DateTime expenseDate;
 
   PersonalBudgetModel(
       {required this.expenseAmount,

@@ -3,7 +3,6 @@ import 'package:phototickapp/Screens/client/functions_repositaries/equipment_rep
 import 'package:phototickapp/colors/colors.dart';
 import 'package:phototickapp/db/client_model/client_model.dart';
 
-
 class PersonalEquipments extends StatefulWidget {
   final ClientModel clientid;
   final List<String>? equipment;
@@ -16,7 +15,8 @@ class PersonalEquipments extends StatefulWidget {
 
 class _PersonalEquipmentsState extends State<PersonalEquipments> {
   List<String> equipmentList = [];
-  final EquipmentRepository equipmentRepository = EquipmentRepository(); // Create an instance of EquipmentRepository
+  final EquipmentRepository equipmentRepository =
+      EquipmentRepository(); // Create an instance of EquipmentRepository
 
   @override
   void initState() {
@@ -30,7 +30,8 @@ class _PersonalEquipmentsState extends State<PersonalEquipments> {
   }
 
   Future<void> fetchEquipments() async {
-    ClientModel? client = await equipmentRepository.getClient(widget.clientid.id);
+    ClientModel? client =
+        await equipmentRepository.getClient(widget.clientid.id);
     if (client != null && client.personalEquipments != null) {
       setState(() {
         equipmentList = client.personalEquipments!;
@@ -43,9 +44,11 @@ class _PersonalEquipmentsState extends State<PersonalEquipments> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor:backgroundColor,
+      backgroundColor: backgroundColor,
       appBar: AppBar(
-        title: Text('Equipments', style: TextStyle(fontSize: 19, fontWeight: FontWeight.bold, color:white)),
+        title: Text('Equipments',
+            style: TextStyle(
+                fontSize: 19, fontWeight: FontWeight.bold, color: white)),
         backgroundColor: appBarColor,
         centerTitle: true,
       ),
@@ -54,8 +57,8 @@ class _PersonalEquipmentsState extends State<PersonalEquipments> {
           showDialogToAddEquipment();
         },
         child: Icon(Icons.add),
-        backgroundColor:appBarColor,
-        foregroundColor:white,
+        backgroundColor: appBarColor,
+        foregroundColor: white,
       ),
       body: ListView.builder(
         itemCount: equipmentList.length,
@@ -106,7 +109,8 @@ class _PersonalEquipmentsState extends State<PersonalEquipments> {
                   setState(() {
                     equipmentList.add(equipmentController.text);
                   });
-                  await equipmentRepository.saveEquipments(widget.clientid.id, equipmentList);
+                  await equipmentRepository.saveEquipments(
+                      widget.clientid.id, equipmentList);
                 }
                 Navigator.of(context).pop();
               },
@@ -124,7 +128,8 @@ class _PersonalEquipmentsState extends State<PersonalEquipments> {
       builder: (context) {
         return AlertDialog(
           content: Text('Are you sure you want to delete this equipment?'),
-          title: Text('Delete Equipment?', style: TextStyle(color: appBarColor)),
+          title:
+              Text('Delete Equipment?', style: TextStyle(color: appBarColor)),
           actions: [
             TextButton(
               onPressed: () {
@@ -135,7 +140,8 @@ class _PersonalEquipmentsState extends State<PersonalEquipments> {
             TextButton(
               onPressed: () async {
                 String equipment = equipmentList[index];
-                await equipmentRepository.deleteEquipment(widget.clientid.id, equipment);
+                await equipmentRepository.deleteEquipment(
+                    widget.clientid.id, equipment);
                 setState(() {
                   equipmentList.removeAt(index);
                 });

@@ -27,7 +27,7 @@ class _PersonalAssistantsState extends State<PersonalAssistants> {
   }
 
   Future<void> _loadAssistants() async {
-    await gettAllAssistant();  
+    await gettAllAssistant();
     setState(() {
       allAssistants = assistantListNotifier.value;
     });

@@ -14,20 +14,16 @@ class AssistantModel {
   @HiveField(3)
   final String Place;
   @HiveField(4)
- final List<RoleModel> selectedroles;
- @HiveField(5)
- final String equipment;
- 
+  final List<RoleModel> selectedroles;
+  @HiveField(5)
+  final String equipment;
 
-  AssistantModel( 
-    {
+  AssistantModel({
     required this.name,
     required this.Phone,
     required this.Place,
     required this.id,
     required this.selectedroles,
     required this.equipment,
-  
-
   });
 }

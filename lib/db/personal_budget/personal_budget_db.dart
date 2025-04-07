@@ -6,7 +6,8 @@ ValueNotifier<List<PersonalBudgetModel>> ExpenseListNotifier =
     ValueNotifier([]);
 String BoxName = 'expense';
 
-Future<void> addExpense(PersonalBudgetModel expense, double newRemainingBudget) async {
+Future<void> addExpense(
+    PersonalBudgetModel expense, double newRemainingBudget) async {
   final ExpenseBox = await Hive.openBox<PersonalBudgetModel>(BoxName);
 
   // Add expense
@@ -27,14 +28,14 @@ Future getAllExpense() async {
   ExpenseListNotifier.notifyListeners();
 }
 
-Future<void> deleteExpense(String expenseId, double expenseAmount, double updatedRemainingBudget) async {
+Future<void> deleteExpense(String expenseId, double expenseAmount,
+    double updatedRemainingBudget) async {
   final ExpenseBox = await Hive.openBox<PersonalBudgetModel>(BoxName);
 
   // Delete expense
   await ExpenseBox.delete(expenseId);
 
   final budgetBox = await Hive.openBox<double>('budgetBox');
- 
 
   await budgetBox.put('remainingBudget', updatedRemainingBudget);
 
@@ -43,4 +44,3 @@ Future<void> deleteExpense(String expenseId, double expenseAmount, double update
 
   getAllExpense();
 }
-

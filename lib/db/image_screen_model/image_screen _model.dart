@@ -1,4 +1,3 @@
-
 import 'package:hive_flutter/adapters.dart';
 
 part 'image_screen _model.g.dart';
@@ -15,8 +14,6 @@ class imagescreen_Model {
   final String description;
   @HiveField(4)
   final String date1;
-
-
 
   imagescreen_Model({
     required this.imagePath,

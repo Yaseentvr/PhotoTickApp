@@ -4,7 +4,6 @@ class Custombutton extends StatelessWidget {
   final Color textColor;
   final Color backgroundColor;
   final String text;
-  
 
   Custombutton({
     super.key,
@@ -20,7 +19,10 @@ class Custombutton extends StatelessWidget {
         width: 150,
         height: 40,
         child: Center(
-          child: Text(text,style: TextStyle( color: textColor,fontSize: 18),),
+          child: Text(
+            text,
+            style: TextStyle(color: textColor, fontSize: 18),
+          ),
         ),
         decoration: BoxDecoration(
           color: backgroundColor,

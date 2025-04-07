@@ -15,13 +15,11 @@ class timeTextField extends StatelessWidget {
       keyboardType: TextInputType.datetime,
       controller: _timeHomeController,
       decoration: InputDecoration(
-          fillColor:
-             white,
+          fillColor: white,
           filled: true,
           hintText: 'Time',
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(9),
-           
           )),
     );
   }

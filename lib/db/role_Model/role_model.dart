@@ -1,4 +1,3 @@
-
 import 'package:hive_flutter/adapters.dart';
 
 part 'role_model.g.dart';
@@ -11,6 +10,4 @@ class RoleModel {
   late String role;
 
   RoleModel(this.id, {required this.role});
-
 }
-

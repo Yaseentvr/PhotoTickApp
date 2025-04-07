@@ -64,13 +64,12 @@ class _ClientlistscreenState extends State<Clientlistscreen> {
         ),
       ),
       floatingActionButton: _floatingAddButton(),
-      
     );
   }
 
   Padding _searchBar() {
     return Padding(
-      padding: const EdgeInsets.only(left: 10,right: 10,bottom: 5),
+      padding: const EdgeInsets.only(left: 10, right: 10, bottom: 5),
       child: Container(
         decoration: BoxDecoration(
           color: Colors.white,
@@ -89,7 +88,8 @@ class _ClientlistscreenState extends State<Clientlistscreen> {
             hintText: 'Search events...',
             prefixIcon: const Icon(Icons.search, color: Colors.grey),
             border: InputBorder.none,
-            contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
+            contentPadding:
+                const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
           ),
           onChanged: (value) {
             setState(() {}); // Trigger rebuild on search input change
@@ -103,7 +103,9 @@ class _ClientlistscreenState extends State<Clientlistscreen> {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Expanded(child: _eventTypeDropdown()), // Placed inside an Expanded to take available space
+        Expanded(
+            child:
+                _eventTypeDropdown()), // Placed inside an Expanded to take available space
         // You can add other filters here if needed
       ],
     );
@@ -111,7 +113,7 @@ class _ClientlistscreenState extends State<Clientlistscreen> {
 
   Widget _eventTypeDropdown() {
     return Padding(
-       padding: EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+      padding: EdgeInsets.symmetric(horizontal: 12, vertical: 6),
       child: Container(
         width: double.infinity,
         height: 55,
@@ -143,7 +145,7 @@ class _ClientlistscreenState extends State<Clientlistscreen> {
                   style: TextStyle(
                       fontSize: 15,
                       fontWeight: FontWeight.bold,
-                      color:appBarColor),
+                      color: appBarColor),
                 ),
               );
             },
@@ -172,7 +174,8 @@ class _ClientlistscreenState extends State<Clientlistscreen> {
             color: white,
             child: ListTile(
               leading: CircleAvatar(
-                backgroundImage: AssetImage('imagesforapp/07c4720d19a9e9edad9d0e939eca304a.jpg'),
+                backgroundImage: AssetImage(
+                    'imagesforapp/07c4720d19a9e9edad9d0e939eca304a.jpg'),
               ),
               onTap: () => _navigateToDetails(data),
               trailing: _listTileActions(context, data),
@@ -191,11 +194,11 @@ class _ClientlistscreenState extends State<Clientlistscreen> {
       children: [
         IconButton(
           onPressed: () => _navigateToUpdateClient(context, data),
-          icon:  Icon(Icons.edit, color: editColor),
+          icon: Icon(Icons.edit, color: editColor),
         ),
         IconButton(
           onPressed: () => _showAlertDeleteClient(context, data.id),
-          icon:  Icon(Icons.delete, color: deleteColor),
+          icon: Icon(Icons.delete, color: deleteColor),
         ),
       ],
     );
@@ -272,11 +275,14 @@ class _ClientlistscreenState extends State<Clientlistscreen> {
       },
     );
   }
-  List<ClientModel> _filterEvents(List<ClientModel> clientList, String searchQuery) {
+
+  List<ClientModel> _filterEvents(
+      List<ClientModel> clientList, String searchQuery) {
     List<ClientModel> filteredList = clientList;
 
     DateTime now = DateTime.now();
-    DateTime startOfWeek = now.subtract(Duration(days: now.weekday - 1)); // Start of this week
+    DateTime startOfWeek =
+        now.subtract(Duration(days: now.weekday - 1)); // Start of this week
     DateTime endOfWeek = startOfWeek.add(Duration(days: 6)); // End of this week
 
     // Filter clients within this week
@@ -288,7 +294,9 @@ class _ClientlistscreenState extends State<Clientlistscreen> {
 
     // Filter by event type
     if (_selectedEventType != null && _selectedEventType != 'All') {
-      filteredList = filteredList.where((client) => client.event == _selectedEventType!).toList();
+      filteredList = filteredList
+          .where((client) => client.event == _selectedEventType!)
+          .toList();
     }
 
     // Search filter

@@ -13,7 +13,8 @@ class noEventAdded_text extends StatelessWidget {
         children: [
           Icon(Icons.event_busy, size: 30, color: Colors.grey),
           SizedBox(height: 10),
-          Text('No Events Added', style: TextStyle(fontWeight: FontWeight.w300)),
+          Text('No Events Added',
+              style: TextStyle(fontWeight: FontWeight.w300)),
         ],
       ),
     );

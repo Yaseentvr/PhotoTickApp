@@ -13,12 +13,11 @@ class budget_textfieldHome extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CustomTextfield(
-          hintText: 'Budget',
-          controller: _budgetHomeController,
-          keybordTpe: TextInputType.number,
-          color1:white,
-           keyboardType: TextInputType.text,
-        );
+      hintText: 'Budget',
+      controller: _budgetHomeController,
+      keybordTpe: TextInputType.number,
+      color1: white,
+      keyboardType: TextInputType.text,
+    );
   }
 }
-

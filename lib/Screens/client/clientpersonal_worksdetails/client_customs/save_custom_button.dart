@@ -10,10 +10,9 @@ class save_customButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Custombutton(
-        textColor: Colors.white,
-        backgroundColor: appBarColor,
-        text: 'Save',
-        
-      );
+      textColor: Colors.white,
+      backgroundColor: appBarColor,
+      text: 'Save',
+    );
   }
 }

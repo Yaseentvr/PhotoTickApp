@@ -37,16 +37,15 @@ class _HomescreenState extends State<Homescreen> {
   final List<Widget> _screens = [
     Clientlistscreen(
       clientDetailsClick: ClientModel(
-        id: '',
-        date: '',
-        time: '',
-        name: '',
-        location: '',
-        event: '',
-        phone: '',
-        budget: '',
-        driveLink1: ''
-      ),
+          id: '',
+          date: '',
+          time: '',
+          name: '',
+          location: '',
+          event: '',
+          phone: '',
+          budget: '',
+          driveLink1: ''),
     ),
     Eventscreen(),
     Imagesscreen(
@@ -75,11 +74,11 @@ class _HomescreenState extends State<Homescreen> {
     PreferredSizeWidget? appBar;
     if (_selectedIndex == 0) {
       appBar = AppBar(
-        backgroundColor:appBarColor, // Change app bar color
+        backgroundColor: appBarColor, // Change app bar color
         elevation: 4,
         leading: company_expenses_button(),
         centerTitle: true,
-        title:  Text(
+        title: Text(
           'Photo Tick',
           style: TextStyle(
             fontSize: 24,
@@ -95,16 +94,16 @@ class _HomescreenState extends State<Homescreen> {
     }
 
     return Scaffold(
-     
       appBar: appBar,
       body: SafeArea(
-        child: _screens[_selectedIndex], // Use the appropriate screen based on selected index
+        child: _screens[
+            _selectedIndex], // Use the appropriate screen based on selected index
       ),
       bottomNavigationBar: Container(
         decoration: BoxDecoration(
           boxShadow: [
             BoxShadow(
-              color:boxShadow,
+              color: boxShadow,
               blurRadius: 15,
               offset: Offset(0, -5),
             ),

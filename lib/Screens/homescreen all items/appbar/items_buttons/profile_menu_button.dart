@@ -15,10 +15,12 @@ class profileMenu_button extends StatelessWidget {
     return IconButton(
         onPressed: () {
           Navigator.push(
-              context,
-              MaterialPageRoute(
-                  builder: (context) => Profilemenu(
-                      name: widget.name, phone: widget.phone ),),);
+            context,
+            MaterialPageRoute(
+              builder: (context) =>
+                  Profilemenu(name: widget.name, phone: widget.phone),
+            ),
+          );
         },
         icon: Icon(Icons.menu));
   }

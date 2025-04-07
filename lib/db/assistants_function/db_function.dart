@@ -3,7 +3,7 @@ import 'package:hive_flutter/adapters.dart';
 import 'package:phototickapp/db/assistant_model/db_model.dart';
 
 final ValueNotifier<List<AssistantModel>> assistantListNotifier =
-ValueNotifier([]);
+    ValueNotifier([]);
 
 Future<void> addAssistant(AssistantModel assistant) async {
   assistantListNotifier.value.add(assistant);
@@ -11,7 +11,6 @@ Future<void> addAssistant(AssistantModel assistant) async {
   await box.put(assistant.id, assistant);
   gettAllAssistant();
 }
-
 
 Future<void> deleteAssistant(String id) async {
   final Box = await Hive.openBox<AssistantModel>('assistant_db');
@@ -31,7 +30,6 @@ randomId() {
   String randomId = DateTime.now().microsecondsSinceEpoch.toString();
   return randomId;
 }
-
 
 Future<void> gettAllAssistant() async {
   assistantListNotifier.value.clear();

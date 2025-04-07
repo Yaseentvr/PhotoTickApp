@@ -17,7 +17,7 @@ class phone_textfield extends StatelessWidget {
       controller: _phoneHomeController,
       keybordTpe: TextInputType.phone,
       color1: white,
-       keyboardType: TextInputType.text,
+      keyboardType: TextInputType.text,
     );
   }
 }

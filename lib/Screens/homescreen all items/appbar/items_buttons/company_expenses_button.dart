@@ -10,8 +10,8 @@ class company_expenses_button extends StatelessWidget {
   Widget build(BuildContext context) {
     return IconButton(
         onPressed: () {
-          Navigator.of(context).push(
-              MaterialPageRoute(builder: (context) => CompanyExpense()));
+          Navigator.of(context)
+              .push(MaterialPageRoute(builder: (context) => CompanyExpense()));
         },
         icon: Icon(Icons.payments_rounded));
   }

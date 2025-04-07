@@ -5,14 +5,12 @@ import 'package:phototickapp/db/client_model/client_model.dart';
 import 'package:phototickapp/screen_Sizes/screenSize.dart';
 
 import 'hive_setup.dart';
-import 'notification_setup.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
   // Initialize Hive and Notifications
   await initializeHive();
-  await initializeNotifications();
 
   runApp(const MyApp());
 }
@@ -22,7 +20,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Screensize(); // Ensure this function is properly defined
+    Screensize();
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Splashscreen(

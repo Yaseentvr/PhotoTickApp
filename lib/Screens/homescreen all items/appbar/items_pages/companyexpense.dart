@@ -84,7 +84,8 @@ class _CompanyExpenseState extends State<CompanyExpense> {
           ),
         ),
       ),
-      body: SingleChildScrollView( // Added SingleChildScrollView
+      body: SingleChildScrollView(
+        // Added SingleChildScrollView
         padding: const EdgeInsets.all(16.0),
         child: Column(
           children: [
@@ -186,7 +187,8 @@ class _CompanyExpenseState extends State<CompanyExpense> {
                 } else {
                   return ListView.builder(
                     shrinkWrap: true, //Added shrinkWrap: true,
-                    physics: const NeverScrollableScrollPhysics(),// Added physics: const NeverScrollableScrollPhysics(),
+                    physics:
+                        const NeverScrollableScrollPhysics(), // Added physics: const NeverScrollableScrollPhysics(),
                     itemCount: box.length,
                     itemBuilder: (context, index) {
                       var expense = box.getAt(index);

@@ -18,7 +18,6 @@ class eventTextfield extends StatelessWidget {
       keybordTpe: TextInputType.text,
       color1: white,
       keyboardType: TextInputType.text,
-     
     );
   }
 }

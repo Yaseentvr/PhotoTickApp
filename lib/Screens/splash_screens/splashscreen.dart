@@ -19,7 +19,8 @@ class _SplashscreenState extends State<Splashscreen> {
     super.initState();
     // Delay for 5 seconds before navigating to login screen
     Future.delayed(Duration(seconds: 5), () {
-      Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) {
+      Navigator.of(context)
+          .pushReplacement(MaterialPageRoute(builder: (context) {
         return Loginscreen(
           clientCheck: ClientModel(
             id: '',
@@ -57,9 +58,9 @@ class _SplashscreenState extends State<Splashscreen> {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                splashTitle(),  // Title
-                SizedBox(height:5),  // Spacing
-                splashsub(),  // Subtitle
+                splashTitle(), // Title
+                SizedBox(height: 5), // Spacing
+                splashsub(),
               ],
             ),
           ),
@@ -74,7 +75,7 @@ class _SplashscreenState extends State<Splashscreen> {
       style: TextStyle(
         fontSize: 40,
         fontWeight: FontWeight.bold,
-        color:white,
+        color: white,
       ),
     );
   }
@@ -84,7 +85,7 @@ class _SplashscreenState extends State<Splashscreen> {
       'Note your works',
       style: TextStyle(
         fontSize: 15,
-        color:white,
+        color: white,
       ),
     );
   }

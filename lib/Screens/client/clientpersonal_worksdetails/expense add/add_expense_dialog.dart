@@ -6,11 +6,8 @@ class AddExpenseDialog extends StatefulWidget {
   final PersonalBudgetModel? expense;
   final Function(String, double, DateTime) onSubmit;
 
-  const AddExpenseDialog({
-    Key? key, 
-    this.expense, 
-    required this.onSubmit
-  }) : super(key: key);
+  const AddExpenseDialog({Key? key, this.expense, required this.onSubmit})
+      : super(key: key);
 
   @override
   _AddExpenseDialogState createState() => _AddExpenseDialogState();
@@ -24,8 +21,10 @@ class _AddExpenseDialogState extends State<AddExpenseDialog> {
   @override
   void initState() {
     super.initState();
-    _expenseNameController = TextEditingController(text: widget.expense?.expenseName);
-    _expenseAmountController = TextEditingController(text: widget.expense?.expenseAmount);
+    _expenseNameController =
+        TextEditingController(text: widget.expense?.expenseName);
+    _expenseAmountController =
+        TextEditingController(text: widget.expense?.expenseAmount);
     _selectedDate = widget.expense?.expenseDate ?? DateTime.now();
   }
 
@@ -106,5 +105,4 @@ class _AddExpenseDialogState extends State<AddExpenseDialog> {
     _expenseAmountController.dispose();
     super.dispose();
   }
-  
 }

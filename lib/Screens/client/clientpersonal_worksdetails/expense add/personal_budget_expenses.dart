@@ -303,7 +303,6 @@ class _PersonalBudgetExpensesState extends State<PersonalBudgetExpenses> {
         backgroundColor: Color(0xFF57CFCE),
         foregroundColor: Colors.white,
       ),
-     
     );
   }
 

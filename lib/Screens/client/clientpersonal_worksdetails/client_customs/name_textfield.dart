@@ -16,8 +16,8 @@ class name_textfield extends StatelessWidget {
       hintText: 'Name',
       controller: _nameHomeController,
       keybordTpe: TextInputType.name,
-      color1:white,
-       keyboardType: TextInputType.text,
+      color1: white,
+      keyboardType: TextInputType.text,
     );
   }
 }
