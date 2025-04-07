@@ -1,6 +1,6 @@
 // main.dart
 import 'package:flutter/material.dart';
-import 'package:phototickapp/Screens/splash_screens/splashscreen.dart';
+import 'package:phototickapp/Screens/homescreen%20all%20items/homescreen.dart';
 import 'package:phototickapp/db/client_model/client_model.dart';
 import 'package:phototickapp/screen_Sizes/screenSize.dart';
 
@@ -23,19 +23,23 @@ class MyApp extends StatelessWidget {
     Screensize();
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Splashscreen(
+      home: Homescreen(
+        name: '', 
+        phone: '', 
+        place: '', 
+        selectedRoles: '', 
         clientCheck: ClientModel(
-          id: '',
-          date: '',
-          time: '',
-          name: '',
-          location: '',
-          event: '',
-          phone: '',
-          budget: '',
-          driveLink1: '',
-        ),
-      ),
+          id: '', 
+          name: '', 
+          phone: '', 
+          date: '', 
+          time: '', 
+          location: '', 
+          event: '', 
+          budget: '', 
+          driveLink1: ''
+        ) // Provide a default ClientModel instance
+      )
     );
   }
 }

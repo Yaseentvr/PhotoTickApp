@@ -18,7 +18,7 @@ class profileMenu_button extends StatelessWidget {
             context,
             MaterialPageRoute(
               builder: (context) =>
-                  Profilemenu(name: widget.name, phone: widget.phone),
+                  Profilemenu(),
             ),
           );
         },
