@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'package:phototickapp/Screens/client/client_details.dart';
 import 'package:phototickapp/Screens/client/client_detailsadd.dart';
 import 'package:phototickapp/Screens/client/customfields/no_event_added_text.dart';
@@ -92,7 +93,7 @@ class _ClientlistscreenState extends State<Clientlistscreen> {
                 const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
           ),
           onChanged: (value) {
-            setState(() {}); // Trigger rebuild on search input change
+            setState(() {});
           },
         ),
       ),
@@ -103,10 +104,7 @@ class _ClientlistscreenState extends State<Clientlistscreen> {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Expanded(
-            child:
-                _eventTypeDropdown()), // Placed inside an Expanded to take available space
-        // You can add other filters here if needed
+        Expanded(child: _eventTypeDropdown()),
       ],
     );
   }
@@ -155,7 +153,7 @@ class _ClientlistscreenState extends State<Clientlistscreen> {
               _selectedEventType = value;
             });
           },
-          underline: Container(), // Removes the default underline
+          underline: Container(),
         ),
       ),
     );
@@ -180,7 +178,7 @@ class _ClientlistscreenState extends State<Clientlistscreen> {
               onTap: () => _navigateToDetails(data),
               trailing: _listTileActions(context, data),
               title: Text(data.name),
-              subtitle: Text(data.date),
+              subtitle: Text(_formatDate(data.date)), // 👈 updated here
             ),
           ),
         );
@@ -311,6 +309,15 @@ class _ClientlistscreenState extends State<Clientlistscreen> {
     }
 
     return filteredList;
+  }
+
+  String _formatDate(String dateString) {
+    try {
+      DateTime parsedDate = DateTime.parse(dateString);
+      return DateFormat('dd MMM yyyy').format(parsedDate); // eg: 06 Apr 2025
+    } catch (e) {
+      return dateString; // fallback if parse fails
+    }
   }
 
   TextStyle _textStyle(double fontSize) {

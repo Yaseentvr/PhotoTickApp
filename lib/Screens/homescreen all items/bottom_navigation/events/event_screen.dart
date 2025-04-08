@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'package:phototickapp/Screens/client/client_details.dart';
 import 'package:phototickapp/Screens/client/client_detailsadd.dart';
 import 'package:phototickapp/Screens/homescreen%20all%20items/bottom_navigation/events/search_bar_widget.dart';
@@ -189,7 +190,7 @@ class _EventscreenState extends State<Eventscreen> {
                             backgroundImage: AssetImage('imagesforapp/07c4720d19a9e9edad9d0e939eca304a.jpg'),
                           ),
                           title: Text(data.name),
-                          subtitle: Text(data.date),
+                          subtitle: Text(_formatDate(data.date)),
                           trailing: Row(
                             mainAxisSize: MainAxisSize.min,
                             children: [
@@ -271,5 +272,13 @@ class _EventscreenState extends State<Eventscreen> {
         );
       },
     );
+  }
+   String _formatDate(String dateString) {
+    try {
+      DateTime parsedDate = DateTime.parse(dateString);
+      return DateFormat('dd MMM yyyy').format(parsedDate); // eg: 06 Apr 2025
+    } catch (e) {
+      return dateString; // fallback if parse fails
+    }
   }
 }
