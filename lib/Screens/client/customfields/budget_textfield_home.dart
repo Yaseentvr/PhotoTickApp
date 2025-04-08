@@ -14,6 +14,7 @@ class budget_textfieldHome extends StatelessWidget {
   Widget build(BuildContext context) {
     return CustomTextfield(
       hintText: 'Budget',
+      labelText: 'Budget',
       controller: _budgetHomeController,
       keybordTpe: TextInputType.number,
       color1: white,

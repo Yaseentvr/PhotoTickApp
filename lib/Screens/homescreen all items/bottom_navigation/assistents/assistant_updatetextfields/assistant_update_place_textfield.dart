@@ -15,6 +15,7 @@ class assistant_updatePlace_textfield extends StatelessWidget {
       padding: const EdgeInsets.all(8.0),
       child: CustomTextfield(
         hintText: 'Place',
+        labelText: 'Place',
         controller: updatePlaceController,
         keybordTpe: TextInputType.text,
         color1: const Color.fromARGB(255, 211, 211, 211),

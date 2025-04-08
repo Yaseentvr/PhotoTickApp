@@ -40,8 +40,10 @@ class LoginRegisterNameAndPhone extends StatelessWidget {
                 height: 20,
               ),
               CustomTextfield(
+
                 color1: white,
                 hintText: 'Company Name',
+                labelText: 'Company Name',
                 controller: _loginNameController,
                 keyboardType: TextInputType.name,
                 keybordTpe: TextInputType.text,
@@ -51,6 +53,7 @@ class LoginRegisterNameAndPhone extends StatelessWidget {
               ),
               CustomTextfield(
                 color1: white,
+                labelText: 'Company Number',
                 hintText: 'Company Number',
                 controller: _loginPhoneController,
                 keyboardType: TextInputType.phone,

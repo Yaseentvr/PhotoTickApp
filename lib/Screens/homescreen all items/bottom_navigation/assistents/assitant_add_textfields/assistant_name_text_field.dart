@@ -15,6 +15,7 @@ class assistant_name_textField extends StatelessWidget {
       padding: const EdgeInsets.all(8.0),
       child: CustomTextfield(
         hintText: 'Name',
+        labelText: 'Name',
         controller: _nameController,
         keybordTpe: TextInputType.name,
         color1: const Color.fromARGB(255, 211, 211, 211),

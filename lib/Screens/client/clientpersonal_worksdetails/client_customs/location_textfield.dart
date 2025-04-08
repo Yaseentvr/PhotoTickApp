@@ -14,6 +14,7 @@ class location_textfield extends StatelessWidget {
   Widget build(BuildContext context) {
     return CustomTextfield(
       hintText: 'Location',
+      labelText: 'Location',
       controller: _locationHomeController,
       keybordTpe: TextInputType.streetAddress,
       color1: white,

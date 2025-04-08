@@ -15,6 +15,7 @@ class assitant_updatePhone_textfield extends StatelessWidget {
       padding: const EdgeInsets.all(8.0),
       child: CustomTextfield(
         hintText: 'Phone',
+        labelText: 'Phone',
         controller: updatePhoneController,
         keybordTpe: TextInputType.phone,
         color1: const Color.fromARGB(255, 211, 211, 211),

@@ -1,0 +1,2 @@
+C:/Users/91974/phototickapp/android/app/.cxx/Debug/5b1g1c53/x86/CMakeFiles/edit_cache.dir
+C:/Users/91974/phototickapp/android/app/.cxx/Debug/5b1g1c53/x86/CMakeFiles/rebuild_cache.dir

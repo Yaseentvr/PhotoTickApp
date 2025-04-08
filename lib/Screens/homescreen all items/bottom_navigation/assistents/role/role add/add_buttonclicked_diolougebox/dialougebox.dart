@@ -29,6 +29,7 @@ class _DialougeboxState extends State<Dialougebox> {
           children: [
             CustomTextfield(
               hintText: 'Add Role',
+              labelText: 'Add Role',
               controller: _addRoleController,
               keybordTpe: TextInputType.text,
               color1: Color.fromARGB(223, 219, 219, 219),

@@ -7,6 +7,7 @@ class CustomTextfield extends StatelessWidget {
   final Color color1;
   final Function(String)? validator;
   final IconButton? IconButton1;
+  final String labelText;
 
   CustomTextfield(
       {super.key,
@@ -14,6 +15,7 @@ class CustomTextfield extends StatelessWidget {
       required this.controller,
       required this.keybordTpe,
       required this.color1,
+      required this.labelText,
       this.validator,
       this.IconButton1,
       required TextInputType keyboardType});
@@ -26,6 +28,7 @@ class CustomTextfield extends StatelessWidget {
       decoration: InputDecoration(
           suffix: IconButton1,
           hintText: hintText,
+          label: Text(hintText),
           fillColor: color1,
           filled: true,
           border: OutlineInputBorder(

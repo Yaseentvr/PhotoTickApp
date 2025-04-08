@@ -14,6 +14,7 @@ class eventTextfield extends StatelessWidget {
   Widget build(BuildContext context) {
     return CustomTextfield(
       hintText: 'Event',
+      labelText: 'Event',
       controller: _eventHomeController,
       keybordTpe: TextInputType.text,
       color1: white,

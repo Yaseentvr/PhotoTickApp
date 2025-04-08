@@ -90,22 +90,26 @@ class _AssistantsscreenState extends State<AssistantsAddScreen> {
           TextFieldWithIcon(
             controller: _nameController,
             hintText: 'Assistant Name',
+            labelText: 'Assistant Name',
             icon: Icons.person,
           ),
           TextFieldWithIcon(
             controller: _phoneController,
             hintText: 'Assistant Phone',
+            labelText: 'Assistant Phone',
             icon: Icons.phone,
             keyboardType: TextInputType.phone,
           ),
           TextFieldWithIcon(
             controller: _placeController,
             hintText: 'Assistant Place',
+            labelText: 'Assistant Place',
             icon: Icons.place,
           ),
            TextFieldWithIcon(
             controller: _equipmentController,
             hintText: 'Assistant Equipments',
+            labelText: 'Assistant Equipments',
             icon: Icons.camera,
           ),
 
@@ -216,6 +220,7 @@ class _AssistantsscreenState extends State<AssistantsAddScreen> {
 class TextFieldWithIcon extends StatelessWidget {
   final TextEditingController controller;
   final String hintText;
+  final String labelText;
   final IconData icon;
   final TextInputType? keyboardType;
 
@@ -224,6 +229,7 @@ class TextFieldWithIcon extends StatelessWidget {
     required this.controller,
     required this.hintText,
     required this.icon,
+    required this.labelText,
     this.keyboardType,
   }) : super(key: key);
 

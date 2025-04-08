@@ -14,10 +14,12 @@ class name_textfield extends StatelessWidget {
   Widget build(BuildContext context) {
     return CustomTextfield(
       hintText: 'Name',
+      labelText: 'Name',
       controller: _nameHomeController,
       keybordTpe: TextInputType.name,
       color1: white,
       keyboardType: TextInputType.text,
+      
     );
   }
 }

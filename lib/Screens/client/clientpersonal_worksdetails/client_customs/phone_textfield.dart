@@ -14,6 +14,7 @@ class phone_textfield extends StatelessWidget {
   Widget build(BuildContext context) {
     return CustomTextfield(
       hintText: 'Phone',
+      labelText: 'Phone',
       controller: _phoneHomeController,
       keybordTpe: TextInputType.phone,
       color1: white,
